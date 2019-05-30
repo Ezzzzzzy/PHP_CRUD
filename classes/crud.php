@@ -51,5 +51,9 @@ class Crud extends DbConfig
         }
     }
 
+    public function escape_string($value)
+    {
+        return $this->connection->real_escape_string($value);
+    }
 
 }
