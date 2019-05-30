@@ -21,5 +21,11 @@ class Validation
         return false;
     }
     
-    
+    public function is_email_valid($email)
+    {
+        if($filter_var($email, FILTER_VALIDATE_EMAIL)){
+            return true;
+        }
+        return false;
+    }
 }
