@@ -8,7 +8,7 @@ class Crud extends DbConfig
         parent::__construct();
     }
     
-    public function getDate($query)
+    public function getData($query)
     {
         $result = $this->connection->query($query);
 
@@ -16,7 +16,7 @@ class Crud extends DbConfig
             return false;
         }
 
-        $row == array();
+        $rows = array();
 
         while($row = $result->fetch_assoc()){
             $rows[] = $row;
@@ -27,7 +27,7 @@ class Crud extends DbConfig
 
     public function execute($query)
     {
-        $result $this->connection->query($query);
+        $result = $this->connection->query($query);
 
         if($result == false){
             echo "Error: cannot execute the command";
